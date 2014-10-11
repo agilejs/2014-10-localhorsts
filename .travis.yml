@@ -11,6 +11,7 @@ addons:
 deploy:
   provider: heroku
   app: agilejs-localhorsts
+  strategy: git
   api_key:
     secure: ! 'DzhquADWVKvvFr022ikl8PYOjw3ayYGBlLDVBD4DfAZsqGK4IYZNTezcH2W0
 
