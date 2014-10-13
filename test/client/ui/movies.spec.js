@@ -62,17 +62,17 @@ describe('Movies', function() {
             'individual lives impact one another in the past, present and ' +
             'future, as one soul is shaped from a killer into a hero, and ' +
             'an act of kindness ripples across centuries to inspire a ' +
-            'revolution.', 42);
+            'revolution.', 1940);
         newMovie.addMovie('Ted', 'As the result of a childhood wish, John Bennett\'s ' +
             'teddy bear, Ted, came to life and has been by John\'s side ever ' +
             'since - a friendship that\'s tested when Lori, John\'s ' +
             'girlfriend of four years, wants more from their relationship.', 2010);
         newMovie.addMovie('The Meerkats', 'An inspiring exploration of one family\'s ' +
             'resilience and fortitude shot using innovative and ' +
-            'groundbreaking filming techniques.', 1900);
+            'groundbreaking filming techniques.', 1901);
         newMovie.addMovie('Undisputed II: Last Man Standing', 'Sequel to the 2002 ' +
             'film. This time, Heavyweight Champ George "Iceman" Chambers is ' +
-            'sent to a Russian Jail on trumped-up drug charges.');
+            'sent to a Russian Jail on trumped-up drug charges.', 1920);
 
         movieOverview.open();
         movieOverview.movieTitles.then(function(elements) {
