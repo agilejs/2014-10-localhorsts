@@ -1,18 +1,6 @@
-function AppCtrl ($scope, $location) {
+function AppCtrl ($scope) {
     'use strict';
     $scope.title = 'The Movie Database';
-    $scope.isActiveTab = function (path) {
-        if ($location.path().substr(0, path.length) === path) {
-            if (path === '/' && $location.path() === '/') {
-                return true;
-            } else if (path === '/') {
-                return false;
-            }
-            return true;
-        } else {
-            return false;
-        }
-    };
 }
 
 function WelcomeCtrl () {
@@ -21,6 +9,9 @@ function WelcomeCtrl () {
 function MoviesListCtrl ($scope, $location, moviesResponse) {
     'use strict';
     $scope.movies = moviesResponse.data;
+    $scope.add = function () {
+        $location.path('/movies/new');
+    };
 }
 
 MoviesListCtrl.resolve = {
@@ -32,11 +23,25 @@ MoviesListCtrl.resolve = {
 
 function ListCtrl ($scope) {
     'use strict';
-    
+
     $scope.predicate = 'title';
     $scope.reverse = false;
 
     $scope.setPredicate = function(predicate) {
+        $scope.predicate = predicate;
+    };
+
+    $scope.setOrder = function(reverse) {
+        $scope.reverse = reverse;
+    };
+
+    $scope.sortBy = function(predicate) {
+        if($scope.predicate !== predicate){
+            $scope.reverse = false;
+        } else {
+            $scope.reverse = !$scope.reverse;
+        }
+
         $scope.predicate = predicate;
     };
 }
