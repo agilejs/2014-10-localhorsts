@@ -1,5 +1,4 @@
-'use strict'
-var uuid = require('node-uuid');
+'use strict';
 var logger = require('log4js').getLogger('routes/actors');
 
 exports = module.exports = function (db) {
@@ -9,12 +8,6 @@ exports = module.exports = function (db) {
     }
 
     var exports = {};
-
-    // helper function to return the absolute base uri used in the request
-    function getAbsoluteUriBase (req) {
-        // we use req.get('host') as this also gives us the port
-        return req.protocol + '://' + req.get('host');
-    }
 
     // return a list of all movies
     exports.getActors = function (req, res) {
