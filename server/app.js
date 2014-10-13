@@ -50,6 +50,8 @@ app.put('/movies/:id', routes.movies.updateMovie);
 // delete is a reserved word
 app['delete']('/movies/:id', routes.movies.deleteMovie);
 
+app.get('/actors', routes.actors.getActors);
+
 // Serve static files
 app.use(serveStatic(serveDirectory));
 
@@ -58,4 +60,3 @@ if (process.env.NODE_ENV === 'development') {
     console.log('app is in dev mode');
     app.use(errorhandler());
 }
-

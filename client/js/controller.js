@@ -46,6 +46,21 @@ function ListCtrl ($scope) {
     };
 }
 
+function ActorsListCtrl ($scope, $location, actorsResponse) {
+    'use strict';
+    $scope.actors = actorsResponse.data;
+    $scope.add = function () {
+        $location.path('/actors/new');
+    };
+}
+
+ActorsListCtrl.resolve = {
+    actorsResponse: function ($http) {
+        'use strict';
+        return $http.get('/actors');
+    }
+};
+
 function MoviesAddCtrl ($scope, $http, $location) {
     'use strict';
     $scope.movie = {};

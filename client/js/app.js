@@ -5,6 +5,7 @@
   MoviesAddCtrl:false,
   MovieDetailCtrl:false,
   MovieEditCtrl:false,
+  ActorsListCtrl:false,
   ErrorCtrl:false */
 
 angular.module('MovieDatabase', ['ngRoute', 'textAngular']).config(
@@ -35,6 +36,12 @@ angular.module('MovieDatabase', ['ngRoute', 'textAngular']).config(
         controller: MovieEditCtrl,
         resolve: MovieEditCtrl.resolve,
         templateUrl: '/partial/movies/edit.html'
+    })
+    .when('/actors', {
+        controller: ActorsListCtrl,
+        resolve: ActorsListCtrl.resolve,
+        templateUrl: '/partial/actors/actors.html'
+
     })
     .when('/404', {
         controller: NotFoundCtrl,
