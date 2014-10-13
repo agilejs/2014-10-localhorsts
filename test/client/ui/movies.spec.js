@@ -79,4 +79,22 @@ describe('Movies', function() {
             expect(elements.length).toEqual(6);
         });
     }, 60000);
+
+    it('should sort the movies by title', function() {
+
+        movieOverview.filterByTitle();
+
+        var firstTitle1 = movieOverview.firstMovie;
+        var lastTitle1 = movieOverview.lastMovie;
+
+        movieOverview.filterByTitle();
+
+        var firstTitle2 = movieOverview.firstMovie;
+        var lastTitle2 = movieOverview.lastMovie;
+
+        expect(firstTitle1).toEqual(lastTitle2);
+        expect(firstTitle2).toEqual(lastTitle1);
+
+    });
+
 });
