@@ -3,7 +3,7 @@ module.exports = function() {
 
     this.title = element(by.model('movie.title'));
     this.releaseYear = element(by.model('movie.releaseYear'));
-    this.description = element(by.model('movie.description'));
+    this.description = element(by.css('div[contenteditable=true]'));
     this.save = element(by.css('.btn-primary'));
 
     this.open = function() {
