@@ -30,6 +30,17 @@ MoviesListCtrl.resolve = {
     }
 };
 
+function ListCtrl ($scope) {
+    'use strict';
+    
+    $scope.predicate = 'title';
+    $scope.reverse = false;
+
+    $scope.setPredicate = function(predicate) {
+        $scope.predicate = predicate;
+    };
+}
+
 function MoviesAddCtrl ($scope, $http, $location) {
     'use strict';
     $scope.movie = {};
