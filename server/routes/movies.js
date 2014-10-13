@@ -115,6 +115,7 @@ exports = module.exports = function (db) {
                 return res.status(404).send();
             }
             node.data.title = req.body.title;
+            node.data.releaseYear = req.body.releaseYear;
             node.data.description = req.body.description;
             node.save(function (err, savedNode) {
                 if (err) {

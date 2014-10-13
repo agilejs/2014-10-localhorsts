@@ -1,6 +1,18 @@
-function AppCtrl ($scope) {
+function AppCtrl ($scope, $location) {
     'use strict';
     $scope.title = 'The Movie Database';
+    $scope.isActiveTab = function (path) {
+        if ($location.path().substr(0, path.length) === path) {
+            if (path === '/' && $location.path() === '/') {
+                return true;
+            } else if (path === '/') {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    };
 }
 
 function WelcomeCtrl () {
@@ -9,9 +21,6 @@ function WelcomeCtrl () {
 function MoviesListCtrl ($scope, $location, moviesResponse) {
     'use strict';
     $scope.movies = moviesResponse.data;
-    $scope.add = function () {
-        $location.path('/movies/new');
-    };
 }
 
 MoviesListCtrl.resolve = {
