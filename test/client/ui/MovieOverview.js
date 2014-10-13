@@ -4,8 +4,8 @@ module.exports = function() {
     this.heading = element(by.css('h1'));
     this.addMovieButton = element(by.css('.btn-primary'));
     this.movieTitles = element.all(by.binding('movie.title'));
-    this.titleHeading = element(by.css('tr:first-child th:first-child a'));
-    this.firstMovie = element(by.css('tr:nth-child(2) td:first-child')); //2. Row of the table is the first Title
+    this.titleHeading = element(by.css('tr:nth-child(2) th:first-child a'));
+    this.firstMovie = element(by.css('tbody tr:first-child td:first-child')); //2. Row of the table is the first Titl
     this.lastMovie = element(by.css('tr:last-child td:first-child')); //Last row of the table is the last Title
 
     this.open = function() {
@@ -18,7 +18,7 @@ module.exports = function() {
 
     this.filterByTitle = function() {
         this.titleHeading.click();
-        this.firstMovie = element(by.css('tr:nth-child(2) td:first-child')); //2. Row of the table is the first Title
+        this.firstMovie = element(by.css('tbody tr:first-child td:first-child')); //2. Row of the table is the first
         this.lastMovie = element(by.css('tr:last-child td:first-child')); //Last row of the table is the last Title
 
     };

@@ -81,19 +81,30 @@ describe('Movies', function() {
     }, 120000);
 
     it('should sort the movies by title', function() {
+        newMovie.addMovie('The Dark Knight', 'When Batman, Gordon and Harvey Dent ' +
+            'launch an assault on the mob, they let the clown out of the ' +
+            'box, the Joker, bent on turning Gotham on itself and bringing ' +
+            'any heroes down to his level.', 2005);
+        newMovie.addMovie('The Dark Knight Rises', 'Eight years on, a new evil rises ' +
+            'from where the Batman and Commissioner Gordon tried to bury it, ' +
+            'causing the Batman to resurface and fight to protect Gotham ' +
+            'City... the very city which brands him an enemy.', 2007);
+        newMovie.addMovie('Cloud Atlas', 'An exploration of how the actions of ' +
+            'individual lives impact one another in the past, present and ' +
+            'future, as one soul is shaped from a killer into a hero, and ' +
+            'an act of kindness ripples across centuries to inspire a ' +
+            'revolution.', 1940);
+
+        movieOverview.open();
 
         movieOverview.filterByTitle();
 
-        var firstTitle1 = movieOverview.firstMovie;
-        var lastTitle1 = movieOverview.lastMovie;
+        expect(movieOverview.firstMovie.getText()).toEqual('The Dark Knight Rises');
+        expect(movieOverview.lastMovie.getText()).toEqual('Cloud Atlas');
 
         movieOverview.filterByTitle();
 
-        var firstTitle2 = movieOverview.firstMovie;
-        var lastTitle2 = movieOverview.lastMovie;
-
-        expect(firstTitle1).toEqual(lastTitle2);
-        expect(firstTitle2).toEqual(lastTitle1);
-
+        expect(movieOverview.firstMovie.getText()).toEqual('Cloud Atlas');
+        expect(movieOverview.lastMovie.getText()).toEqual('The Dark Knight Rises');
     });
 });
