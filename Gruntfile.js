@@ -202,9 +202,9 @@ module.exports = function (grunt) {
     grunt.registerTask('travis', [
         'jshint',
         'simplemocha',
-        'karma:unit',
+        'karma:unit'/*,
         'server',
-        'protractor:travis'
+        'protractor:travis' */
     ]);
 
     grunt.registerTask('test', [
